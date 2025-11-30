@@ -70,8 +70,8 @@ The application features a modern, glassmorphism-inspired UI, secure authenticat
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/segmentos-ai.git
-cd segmentos-ai
+git clone https://github.com/Shaik-Fahad-11/Customer-Segmentation-Using-Unsupervised-Learning
+cd Customer-Segmentation-Using-Unsupervised-Learning
 ```
 
 ### 2. Install Python Dependencies
