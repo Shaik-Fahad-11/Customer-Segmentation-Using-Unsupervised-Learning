@@ -193,7 +193,7 @@ function renderPieChart(id, ratios) {
             labels: Object.keys(ratios),
             datasets: [{
                 data: Object.values(ratios),
-                backgroundColor: ['#3B82F6', '#EC4899'],
+                backgroundColor: ['#EC4899', '#3B82F6'],
                 borderWidth: 0
             }]
         },
@@ -370,4 +370,5 @@ async function downloadReport() {
         }
         btn.innerHTML = originalText;
     }
+
 }
