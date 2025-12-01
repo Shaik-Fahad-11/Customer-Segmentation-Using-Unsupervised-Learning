@@ -36,7 +36,6 @@
                     <button class="text-left px-4 py-2 hover:bg-white/5 rounded-lg transition opacity-70">
                         <i class="fa-solid fa-users mr-2"></i> Clusters
                     </button>
-                    <!-- FIX #1: Icon visibility fixed -->
                     <button class="text-left px-4 py-2 hover:bg-white/5 rounded-lg transition opacity-70">
                         <i class="fa-solid fa-sack-dollar mr-2"></i> Revenue
                     </button>
@@ -46,7 +45,6 @@
             <div class="mt-auto">
                 <div class="p-4 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-xl text-white mb-4">
                     <p class="text-xs font-bold mb-1">AI Assistant</p>
-                    <!-- FIX #2: Added ID for dynamic update -->
                     <p class="text-xs opacity-90" id="sidebar-status-text">Running analysis on trends...</p>
                 </div>
                 <div class="flex items-center justify-between px-2">
@@ -146,7 +144,7 @@
                         </div>
                     </div>
 
-                    <!-- Segments & AI -->
+                    <!-- Row 2: Segments & AI -->
                     <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
                         <div class="glass-panel p-5 lg:col-span-2">
                             <h4 class="font-bold mb-4">Customer Segments (K-Means)</h4>
@@ -162,13 +160,28 @@
                         </div>
                     </div>
 
-                    <!-- Heatmap -->
+                    <!-- NEW: CLUSTER DOMAIN ANALYSIS -->
+                    <div class="glass-panel p-5 mb-8">
+                        <div class="flex justify-between items-end mb-4">
+                            <div>
+                                <h4 class="font-bold flex items-center gap-2">
+                                    <i class="fa-solid fa-layer-group text-indigo-400"></i>
+                                    Cluster Domain Analysis
+                                </h4>
+                                <p class="text-xs opacity-60 mt-1">Spending distribution across 5 key domains per
+                                    segment.</p>
+                            </div>
+                        </div>
+                        <div class="h-80"><canvas id="mainClusterDomainChart"></canvas></div>
+                    </div>
+
+                    <!-- Row 3: Heatmap -->
                     <div class="glass-panel p-5 mb-8">
                         <h4 class="font-bold mb-4">Domain Popularity Heatmap</h4>
                         <div id="mainHeatmap" class="heatmap-grid"></div>
                     </div>
 
-                    <!-- Breakdown & Demographics -->
+                    <!-- Row 4: Breakdown & Demographics -->
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
                         <div class="glass-panel p-5">
                             <h4 class="font-bold mb-4">Category Spending Breakdown</h4>
@@ -199,6 +212,7 @@
 
                     <!-- Compare KPIs -->
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 mb-8">
+                        <!-- (KPIs same as before, simplified for brevity in this snippet) -->
                         <div class="kpi-card-new kpi-blue">
                             <div>
                                 <p class="text-xs font-bold uppercase opacity-60 mb-1">Total Visitors</p>
@@ -236,10 +250,10 @@
                         </div>
                     </div>
 
-                    <!-- Compare Charts -->
+                    <!-- Compare Segments & AI -->
                     <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
                         <div class="glass-panel p-5 lg:col-span-2">
-                            <h4 class="font-bold mb-4">Segments</h4>
+                            <h4 class="font-bold mb-4">Customer Segments (K-Means)</h4>
                             <div class="h-80 relative"><canvas id="compareClusterChart"></canvas></div>
                         </div>
                         <div class="glass-panel p-5 flex flex-col">
@@ -252,15 +266,23 @@
                         </div>
                     </div>
 
+                    <!-- NEW: COMPARE CLUSTER DOMAIN ANALYSIS -->
+                    <div class="glass-panel p-5 mb-8">
+                        <h4 class="font-bold mb-4">Cluster Domain Analysis (Compare)</h4>
+                        <div class="h-80"><canvas id="compareClusterDomainChart"></canvas></div>
+                    </div>
+
+                    <!-- Compare Heatmap -->
                     <div class="glass-panel p-5 mb-8">
                         <h4 class="font-bold mb-4">Domain Popularity Heatmap</h4>
                         <div id="compareHeatmap" class="heatmap-grid"
                             style="grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));"></div>
                     </div>
 
+                    <!-- Compare Breakdown + Demographics -->
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
                         <div class="glass-panel p-5">
-                            <h4 class="font-bold mb-4">Breakdown</h4>
+                            <h4 class="font-bold mb-4">Category Spending Breakdown</h4>
                             <div class="h-80"><canvas id="compareDomainChart"></canvas></div>
                         </div>
                         <div class="glass-panel p-5 text-center">
